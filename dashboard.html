@@ -13,9 +13,9 @@
       theme: {
         extend: {
           colors: {
-            navy: { 50:'#F0F7FF', 100:'#E5F0FF', 200:'#C8D9EE', 500:'#2563EB', 600:'#1E3A5F', 700:'#1E3A5F', 800:'#152D4A', 900:'#0D1B2A' },
-            steel: { 400:'#5A7A9A', 500:'#4A6D8C', 600:'#3A5A7A' },
-            gold: { 400:'#1E3A5F', 500:'#2563EB' }
+            navy: { 50:'#F6F6E9', 100:'#EEEEDD', 200:'#C4C4AA', 400:'#005792', 500:'#005792', 600:'#13334C', 700:'#13334C', 800:'#0D2438', 900:'#08182A' },
+            steel: { 400:'#6A7A88', 500:'#5A6A78', 600:'#4A5A68' },
+            gold: { 400:'#FD5F00', 500:'#E55500' }
           }
         }
       }
@@ -24,13 +24,13 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     body { font-family: 'Inter', sans-serif; }
-    input[type=range] { -webkit-appearance: none; height: 6px; border-radius: 3px; background: #C8D9EE; outline: none; }
-    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #1E3A5F; cursor: pointer; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+    input[type=range] { -webkit-appearance: none; height: 6px; border-radius: 3px; background: #C4C4AA; outline: none; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #FD5F00; cursor: pointer; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
     .fade-in { animation: fadeIn .3s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
-<body class="bg-slate-50 min-h-screen">
+<body style="background:#F6F6E9" class="min-h-screen">
 <div id="root"></div>
 
 <script type="text/babel">
@@ -166,8 +166,8 @@ function Logo({ size = 48 }) {
     <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#1E3A5F"/>
-          <stop offset="100%" stopColor="#1E3A5F"/>
+          <stop offset="0%" stopColor="#13334C"/>
+          <stop offset="100%" stopColor="#13334C"/>
         </linearGradient>
         <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#c8d8e8"/>
@@ -292,10 +292,10 @@ function Dashboard() {
   const grossProfitPerUnit = (resaleMin + resaleMax) / 2 - costs.landedPerUnit;
 
   return (
-    <div className="min-h-screen" style={{background:'#F5F6F8'}}>
+    <div className="min-h-screen" style={{background:'#F6F6E9'}}>
 
       {/* ── TOPBAR ── */}
-      <div style={{background:'#F8FAFF',color:'#5A7A9A',fontSize:'.78rem',padding:'8px 0',borderBottom:'1px solid #C8D9EE'}}>
+      <div style={{background:'#F6F6E9',color:'#6A7A88',fontSize:'.78rem',padding:'8px 0',borderBottom:'1px solid #C4C4AA'}}>
         <div style={{maxWidth:'1160px',margin:'0 auto',padding:'0 24px',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:'12px'}}>
           <span>Japón Compacto · Import Operations Platform</span>
           <span>Yokohama → Manzanillo → Interior MX · B2B Only</span>
@@ -303,15 +303,15 @@ function Dashboard() {
       </div>
 
       {/* ── NAVBAR ── */}
-      <nav style={{position:'sticky',top:0,zIndex:100,background:'rgba(13,17,23,0.97)',backdropFilter:'blur(12px)',borderBottom:'1px solid #C8D9EE',padding:'0 24px'}}>
+      <nav style={{position:'sticky',top:0,zIndex:100,background:'rgba(246,246,233,0.97)',backdropFilter:'blur(12px)',borderBottom:'1px solid #C4C4AA',padding:'0 24px'}}>
         <div style={{maxWidth:'1160px',margin:'0 auto',display:'flex',alignItems:'center',justifyContent:'space-between',height:'68px',gap:'24px'}}>
 
           {/* Brand */}
           <div style={{display:'flex',alignItems:'center',gap:'10px',flexShrink:0}}>
-            <div style={{width:'36px',height:'36px',background:'#1E3A5F',borderRadius:'8px',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:900,fontSize:'1.1rem',color:'#fff'}}>JC</div>
+            <div style={{width:'36px',height:'36px',background:'#FD5F00',borderRadius:'8px',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:900,fontSize:'1.1rem',color:'#fff'}}>JC</div>
             <div>
-              <div style={{fontSize:'1.05rem',fontWeight:800,color:'#fff',letterSpacing:'-.02em'}}>Japón<span style={{color:'#1E3A5F'}}>Compacto</span></div>
-              <div style={{fontSize:'.72rem',color:'#5A7A9A',fontWeight:600,letterSpacing:'.04em',textTransform:'uppercase'}}>Import Logistics Dashboard</div>
+              <div style={{fontSize:'1.05rem',fontWeight:800,color:'#13334C',letterSpacing:'-.02em'}}>Japón<span style={{color:'#005792'}}>Compacto</span></div>
+              <div style={{fontSize:'.72rem',color:'#6A7A88',fontWeight:600,letterSpacing:'.04em',textTransform:'uppercase'}}>Import Logistics Dashboard</div>
             </div>
           </div>
 
@@ -322,24 +322,24 @@ function Dashboard() {
             <div ref={dropRef} style={{position:'relative'}}>
               <button
                 onClick={() => setDropOpen(o => !o)}
-                style={{display:'flex',alignItems:'center',gap:'6px',fontSize:'.88rem',fontWeight:600,color:'#5A7A9A',padding:'6px 14px',borderRadius:'6px',background:'transparent',border:'none',cursor:'pointer',transition:'color .2s,background .2s'}}
+                style={{display:'flex',alignItems:'center',gap:'6px',fontSize:'.88rem',fontWeight:600,color:'#13334C',padding:'6px 14px',borderRadius:'6px',background:'transparent',border:'none',cursor:'pointer',transition:'color .2s,background .2s'}}
                 onMouseOver={e => { e.currentTarget.style.color='#fff'; e.currentTarget.style.background='#FFFFFF'; }}
-                onMouseOut={e => { e.currentTarget.style.color='#5A7A9A'; e.currentTarget.style.background='transparent'; }}
+                onMouseOut={e => { e.currentTarget.style.color='#13334C'; e.currentTarget.style.background='transparent'; }}
               >
                 {t.select_view} <span style={{fontSize:'.7rem',transition:'transform .2s',display:'inline-block',transform:dropOpen?'rotate(180deg)':'rotate(0deg)'}}>▾</span>
               </button>
               {dropOpen && (
-                <div style={{position:'absolute',top:'calc(100% + 6px)',left:0,background:'#0D1B2A',border:'1px solid #C8D9EE',borderRadius:'8px',minWidth:'210px',overflow:'hidden',zIndex:200,boxShadow:'0 8px 24px rgba(0,0,0,.4)'}}>
-                  <a href="index-en.html" style={{display:'block',padding:'10px 16px',fontSize:'.85rem',fontWeight:600,color:'#5A7A9A',textDecoration:'none'}}
-                    onMouseOver={e=>{e.currentTarget.style.color='#fff';e.currentTarget.style.background='#FFFFFF';}}
-                    onMouseOut={e=>{e.currentTarget.style.color='#5A7A9A';e.currentTarget.style.background='transparent';}}
+                <div style={{position:'absolute',top:'calc(100% + 6px)',left:0,background:'#FFFFFF',border:'1px solid #C4C4AA',borderRadius:'8px',minWidth:'210px',overflow:'hidden',zIndex:200,boxShadow:'0 8px 24px rgba(19,51,76,.12)'}}>
+                  <a href="index-en.html" style={{display:'block',padding:'10px 16px',fontSize:'.85rem',fontWeight:600,color:'#6A7A88',textDecoration:'none'}}
+                    onMouseOver={e=>{e.currentTarget.style.color='#13334C';e.currentTarget.style.background='#F6F6E9';}}
+                    onMouseOut={e=>{e.currentTarget.style.color='#6A7A88';e.currentTarget.style.background='transparent';}}
                   >🏠 {t.home_page}</a>
-                  <div style={{display:'block',padding:'10px 16px',fontSize:'.85rem',fontWeight:700,color:'#1E3A5F',background:'#F0F7FF',borderLeft:'3px solid #1E3A5F'}}>
+                  <div style={{display:'block',padding:'10px 16px',fontSize:'.85rem',fontWeight:700,color:'#13334C',background:'#F6F6E9',borderLeft:'3px solid #FD5F00'}}>
                     📊 {t.machinery_dashboard}
                   </div>
-                  <a href="consultor.html" style={{display:'block',padding:'10px 16px',fontSize:'.85rem',fontWeight:600,color:'#5A7A9A',textDecoration:'none',borderTop:'1px solid #C8D9EE'}}
-                    onMouseOver={e=>{e.currentTarget.style.color='#fff';e.currentTarget.style.background='#FFFFFF';}}
-                    onMouseOut={e=>{e.currentTarget.style.color='#5A7A9A';e.currentTarget.style.background='transparent';}}
+                  <a href="consultor.html" style={{display:'block',padding:'10px 16px',fontSize:'.85rem',fontWeight:600,color:'#6A7A88',textDecoration:'none',borderTop:'1px solid #C4C4AA'}}
+                    onMouseOver={e=>{e.currentTarget.style.color='#13334C';e.currentTarget.style.background='#F6F6E9';}}
+                    onMouseOut={e=>{e.currentTarget.style.color='#6A7A88';e.currentTarget.style.background='transparent';}}
                   >🔍 {t.acquisition_advisor}</a>
                 </div>
               )}
@@ -348,7 +348,7 @@ function Dashboard() {
             {/* Language toggle */}
             <button
               onClick={() => setLang(l => l === 'en' ? 'es' : 'en')}
-              style={{display:'inline-flex',alignItems:'center',gap:'6px',background:'rgba(200,16,46,.12)',border:'1px solid rgba(200,16,46,.3)',color:'#1E3A5F',fontSize:'.72rem',fontWeight:700,padding:'4px 12px',borderRadius:'100px',cursor:'pointer',transition:'background .2s'}}
+              style={{display:'inline-flex',alignItems:'center',gap:'6px',background:'rgba(200,16,46,.12)',border:'1px solid rgba(200,16,46,.3)',color:'#13334C',fontSize:'.72rem',fontWeight:700,padding:'4px 12px',borderRadius:'100px',cursor:'pointer',transition:'background .2s'}}
               onMouseOver={e=>e.currentTarget.style.background='rgba(200,16,46,.22)'}
               onMouseOut={e=>e.currentTarget.style.background='rgba(200,16,46,.12)'}
             >
@@ -361,8 +361,8 @@ function Dashboard() {
       <div style={{maxWidth:'1160px',margin:'0 auto',padding:'40px 24px 64px'}}>
 
         {/* ── VOLATILITY DISCLAIMER ── */}
-        <div style={{marginBottom:'32px',background:'#EBF4FF',border:'2px solid #1E3A5F',borderRadius:'12px',padding:'20px 24px',display:'flex',gap:'16px',alignItems:'flex-start'}}>
-          <div style={{color:'#1E3A5F',fontSize:'1.4rem',flexShrink:0,marginTop:'2px'}}>⚠</div>
+        <div style={{marginBottom:'32px',background:'#F2F2E4',border:'2px solid #FD5F00',borderRadius:'12px',padding:'20px 24px',display:'flex',gap:'16px',alignItems:'flex-start'}}>
+          <div style={{color:'#13334C',fontSize:'1.4rem',flexShrink:0,marginTop:'2px'}}>⚠</div>
           <div>
             <div style={{fontWeight:700,color:'#7F1D1D',fontSize:'.8rem',textTransform:'uppercase',letterSpacing:'.08em',marginBottom:'6px'}}>{t.disclaimer_title}</div>
             <p style={{color:'#7F1D1D',fontSize:'.88rem',lineHeight:1.7}}>{t.disclaimer_body}</p>
@@ -371,7 +371,7 @@ function Dashboard() {
 
         {/* ── PAGE TITLE ── */}
         <div style={{marginBottom:'32px'}}>
-          <h1 style={{fontSize:'clamp(1.6rem,3vw,2.4rem)',fontWeight:800,color:'#F8FAFF',lineHeight:1.2,marginBottom:'8px'}}>{t.page_title}</h1>
+          <h1 style={{fontSize:'clamp(1.6rem,3vw,2.4rem)',fontWeight:800,color:'#F6F6E9',lineHeight:1.2,marginBottom:'8px'}}>{t.page_title}</h1>
           <p style={{color:'#6B7280',fontSize:'.95rem'}}>{t.page_sub}</p>
         </div>
 
@@ -381,13 +381,13 @@ function Dashboard() {
           <div className="xl:col-span-1 space-y-5">
 
             {/* Container Count */}
-            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'16px'}}>
                 <div>
                   <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'4px'}}>{t.container_count}</div>
                   <div style={{color:'#6B7280',fontSize:'.8rem'}}>{t.container_sub}</div>
                 </div>
-                <div style={{background:'#F8FAFF',color:'#fff',fontSize:'1.6rem',fontWeight:900,width:'56px',height:'56px',borderRadius:'10px',display:'flex',alignItems:'center',justifyContent:'center'}}>{containers}</div>
+                <div style={{background:'#F6F6E9',color:'#fff',fontSize:'1.6rem',fontWeight:900,width:'56px',height:'56px',borderRadius:'10px',display:'flex',alignItems:'center',justifyContent:'center'}}>{containers}</div>
               </div>
               <input type="range" min="1" max="20" value={containers} onChange={e => setContainers(+e.target.value)} className="w-full"/>
               <div style={{display:'flex',justifyContent:'space-between',fontSize:'.72rem',color:'#9CA3AF',marginTop:'4px'}}>
@@ -396,13 +396,13 @@ function Dashboard() {
             </div>
 
             {/* Excavators per Container */}
-            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'16px'}}>
                 <div>
                   <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'4px'}}>{t.excavators_label}</div>
                   <div style={{color:'#6B7280',fontSize:'.8rem'}}>{t.excavators_sub}</div>
                 </div>
-                <div style={{background:'#F8FAFF',color:'#fff',fontSize:'1.6rem',fontWeight:900,width:'56px',height:'56px',borderRadius:'10px',display:'flex',alignItems:'center',justifyContent:'center'}}>{excsPerCont}</div>
+                <div style={{background:'#F6F6E9',color:'#fff',fontSize:'1.6rem',fontWeight:900,width:'56px',height:'56px',borderRadius:'10px',display:'flex',alignItems:'center',justifyContent:'center'}}>{excsPerCont}</div>
               </div>
               <input type="range" min="1" max="4" value={excsPerCont} onChange={e => setExcsPerCont(+e.target.value)} className="w-full"/>
               <div style={{display:'flex',justifyContent:'space-between',fontSize:'.72rem',color:'#9CA3AF',marginTop:'4px'}}>
@@ -411,25 +411,25 @@ function Dashboard() {
             </div>
 
             {/* Auction Price Slider */}
-            <div style={{background:'linear-gradient(135deg,#1E3A5F,#2563EB)',borderRadius:'12px',padding:'24px',color:'#fff'}}>
-              <div style={{fontSize:'.72rem',fontWeight:700,color:'#5A7A9A',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'6px'}}>
+            <div style={{background:'linear-gradient(135deg,#13334C,#005792)',borderRadius:'12px',padding:'24px',color:'#fff'}}>
+              <div style={{fontSize:'.72rem',fontWeight:700,color:'#6A7A88',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'6px'}}>
                 {lang==='en' ? 'Auction Hammer Price / Unit' : 'Precio de Martillo / Unidad'}
               </div>
-              <div style={{fontSize:'.75rem',color:'#5A7A9A',marginBottom:'14px'}}>
+              <div style={{fontSize:'.75rem',color:'#6A7A88',marginBottom:'14px'}}>
                 {lang==='en' ? 'Japanese auction · Yokohama (3.5T–5.5T compact)' : 'Subasta japonesa · Yokohama (3.5T–5.5T compacta)'}
               </div>
               <div style={{display:'flex',alignItems:'baseline',gap:'8px',marginBottom:'4px'}}>
                 <div style={{fontSize:'2.4rem',fontWeight:900,lineHeight:1,color:'#fff'}}>{fmt(auctionPrice)}</div>
-                <div style={{color:'#5A7A9A',fontSize:'.85rem'}}>USD</div>
+                <div style={{color:'#6A7A88',fontSize:'.85rem'}}>USD</div>
               </div>
-              <div style={{fontSize:'.72rem',color:'#5A7A9A',marginBottom:'14px'}}>
+              <div style={{fontSize:'.72rem',color:'#6A7A88',marginBottom:'14px'}}>
                 {lang==='en' ? 'Range: $13,000 – $20,000' : 'Rango: $13,000 – $20,000'}
               </div>
               <input
                 type="range" min={AUCTION_PRICE_MIN} max={AUCTION_PRICE_MAX} step={500}
                 value={auctionPrice}
                 onChange={e => setAuctionPrice(+e.target.value)}
-                style={{width:'100%',accentColor:'#1E3A5F'}}
+                style={{width:'100%',accentColor:'#13334C'}}
               />
               <div style={{display:'flex',justifyContent:'space-between',fontSize:'.7rem',color:'#64748B',marginTop:'4px'}}>
                 <span>$13,000</span><span>$16,500</span><span>$20,000</span>
@@ -437,31 +437,31 @@ function Dashboard() {
             </div>
 
             {/* Total Excavators + capital */}
-            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
               <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'12px'}}>{t.total_excavators}</div>
               <div style={{display:'flex',alignItems:'flex-end',gap:'10px',marginBottom:'4px'}}>
-                <div style={{fontSize:'3.2rem',fontWeight:900,lineHeight:1,color:'#F8FAFF'}}>{totalExcavators}</div>
+                <div style={{fontSize:'3.2rem',fontWeight:900,lineHeight:1,color:'#F6F6E9'}}>{totalExcavators}</div>
                 <div style={{color:'#6B7280',fontSize:'.9rem',marginBottom:'8px'}}>{t.units}</div>
               </div>
               <div style={{color:'#9CA3AF',fontSize:'.78rem',marginBottom:'14px'}}>{containers} × {excsPerCont}</div>
               <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'10px'}}>
-                <div style={{background:'#F5F6F8',borderRadius:'8px',padding:'12px'}}>
+                <div style={{background:'#F6F6E9',borderRadius:'8px',padding:'12px'}}>
                   <div style={{fontSize:'.68rem',color:'#6B7280',fontWeight:600,marginBottom:'4px',textTransform:'uppercase',letterSpacing:'.05em'}}>
                     {lang==='en' ? 'Auction Capital' : 'Capital Subasta'}
                   </div>
-                  <div style={{fontWeight:800,fontSize:'1rem',color:'#F8FAFF'}}>{fmtM(costs.auctionTotal)}</div>
+                  <div style={{fontWeight:800,fontSize:'1rem',color:'#F6F6E9'}}>{fmtM(costs.auctionTotal)}</div>
                 </div>
                 <div style={{background:'#FDECEA',borderRadius:'8px',padding:'12px'}}>
                   <div style={{fontSize:'.68rem',color:'#9B1C1C',fontWeight:600,marginBottom:'4px',textTransform:'uppercase',letterSpacing:'.05em'}}>
                     {lang==='en' ? 'Total Landed' : 'Total en Tierra'}
                   </div>
-                  <div style={{fontWeight:800,fontSize:'1rem',color:'#1E3A5F'}}>{fmtM(costs.totalBeforeIva)}</div>
+                  <div style={{fontWeight:800,fontSize:'1rem',color:'#13334C'}}>{fmtM(costs.totalBeforeIva)}</div>
                 </div>
               </div>
             </div>
 
             {/* Destination */}
-            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
               <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'12px'}}>{t.inland_dest}</div>
               <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
                 {DESTINATIONS.map(d => {
@@ -474,14 +474,14 @@ function Dashboard() {
                       style={{
                         width:'100%',display:'flex',alignItems:'center',justifyContent:'space-between',
                         padding:'10px 14px',borderRadius:'8px',cursor:'pointer',textAlign:'left',
-                        border: active ? '2px solid #1E3A5F' : '1.5px solid #C8D9EE',
-                        background: active ? '#F5F6F8' : '#fff',
+                        border: active ? '2px solid #FD5F00' : '1.5px solid #C4C4AA',
+                        background: active ? '#F6F6E9' : '#fff',
                         transition:'all .15s'
                       }}
                     >
                       <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
-                        <div style={{width:'8px',height:'8px',borderRadius:'50%',background: d.risk==='low'?'#1D6B3B':d.risk==='medium'?'#D97706':'#1E3A5F'}}></div>
-                        <span style={{fontWeight: active?700:600,fontSize:'.88rem',color: active?'#F8FAFF':'#1E3A5F'}}>{d.label}</span>
+                        <div style={{width:'8px',height:'8px',borderRadius:'50%',background: d.risk==='low'?'#1D6B3B':d.risk==='medium'?'#D97706':'#13334C'}}></div>
+                        <span style={{fontWeight: active?700:600,fontSize:'.88rem',color: active?'#F6F6E9':'#13334C'}}>{d.label}</span>
                       </div>
                       <div style={{display:'flex',alignItems:'center',gap:'6px'}}>
                         <span style={{fontSize:'.72rem',color:'#9CA3AF'}}>{d.km} km</span>
@@ -498,20 +498,20 @@ function Dashboard() {
             </div>
 
             {/* Security Protocol */}
-            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
               <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'12px'}}>{t.security_title}</div>
               <div style={{display:'flex',flexDirection:'column',gap:'10px'}}>
-                <label style={{display:'flex',alignItems:'flex-start',gap:'12px',padding:'14px',borderRadius:'10px',cursor:'pointer',border: security==='A'?'2px solid #1E3A5F':'1.5px solid #C8D9EE',background: security==='A'?'#FDECEA':'#fff'}}>
-                  <input type="radio" name="security" value="A" checked={security==='A'} onChange={()=>setSecurity('A')} style={{marginTop:'2px',accentColor:'#1E3A5F'}}/>
+                <label style={{display:'flex',alignItems:'flex-start',gap:'12px',padding:'14px',borderRadius:'10px',cursor:'pointer',border: security==='A'?'2px solid #FD5F00':'1.5px solid #C4C4AA',background: security==='A'?'#FDECEA':'#fff'}}>
+                  <input type="radio" name="security" value="A" checked={security==='A'} onChange={()=>setSecurity('A')} style={{marginTop:'2px',accentColor:'#13334C'}}/>
                   <div>
-                    <div style={{fontWeight:700,fontSize:'.88rem',color:'#F8FAFF'}}>{t.opt_a_label}</div>
+                    <div style={{fontWeight:700,fontSize:'.88rem',color:'#F6F6E9'}}>{t.opt_a_label}</div>
                     <div style={{fontSize:'.75rem',color:'#6B7280',marginTop:'2px'}}>{t.opt_a_sub}</div>
                   </div>
                 </label>
-                <label style={{display:'flex',alignItems:'flex-start',gap:'12px',padding:'14px',borderRadius:'10px',cursor:'pointer',border: security==='B'?'2px solid #1D6B3B':'1.5px solid #C8D9EE',background: security==='B'?'#D4EDDA':'#fff'}}>
+                <label style={{display:'flex',alignItems:'flex-start',gap:'12px',padding:'14px',borderRadius:'10px',cursor:'pointer',border: security==='B'?'2px solid #1D6B3B':'1.5px solid #C4C4AA',background: security==='B'?'#D4EDDA':'#fff'}}>
                   <input type="radio" name="security" value="B" checked={security==='B'} onChange={()=>setSecurity('B')} style={{marginTop:'2px',accentColor:'#1D6B3B'}}/>
                   <div>
-                    <div style={{fontWeight:700,fontSize:'.88rem',color:'#F8FAFF'}}>{t.opt_b_label}</div>
+                    <div style={{fontWeight:700,fontSize:'.88rem',color:'#F6F6E9'}}>{t.opt_b_label}</div>
                     <div style={{fontSize:'.75rem',color:'#6B7280',marginTop:'2px'}}>{t.opt_b_sub}</div>
                   </div>
                 </label>
@@ -526,16 +526,16 @@ function Dashboard() {
             {/* KPI Row */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { label: t.kpi_total_units,  value: totalExcavators,          suffix: t.excavators_label2,                                       color: '#F8FAFF' },
+                { label: t.kpi_total_units,  value: totalExcavators,          suffix: t.excavators_label2,                                       color: '#F6F6E9' },
                 { label: t.kpi_landed,        value: fmt(costs.landedPerUnit), suffix: t.usd + ' / unit',                                          color: '#1A3A5C' },
                 { label: lang==='en'?'Target Resale / Unit':'Reventa Objetivo / Unidad',
                   value: fmt(resaleForMargin(costs.landedPerUnit, 0.365)),
-                  suffix: lang==='en'?'~36.5% gross margin':'~36.5% margen bruto',                                                                  color: '#1E3A5F' },
+                  suffix: lang==='en'?'~36.5% gross margin':'~36.5% margen bruto',                                                                  color: '#13334C' },
                 { label: lang==='en'?'Gross Profit / Unit':'Utilidad Bruta / Unidad',
                   value: fmt(resaleForMargin(costs.landedPerUnit, 0.365) - costs.landedPerUnit),
                   suffix: lang==='en'?'at mid-band margin':'al margen punto medio',                                                                  color: '#1D6B3B' },
               ].map((kpi, i) => (
-                <div key={i} style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'20px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+                <div key={i} style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'20px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
                   <div style={{fontSize:'.68rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'8px'}}>{kpi.label}</div>
                   <div style={{fontSize:'1.5rem',fontWeight:900,color:kpi.color,lineHeight:1}}>{kpi.value}</div>
                   <div style={{fontSize:'.72rem',color:'#9CA3AF',marginTop:'4px'}}>{kpi.suffix}</div>
@@ -544,7 +544,7 @@ function Dashboard() {
             </div>
 
             {/* Cost Breakdown */}
-            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'20px'}}>
                 <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em'}}>{t.cost_breakdown}</div>
                 <span style={{
@@ -574,33 +574,33 @@ function Dashboard() {
                     ...(row.hl ? { background: security==='A'?'#FDECEA':'#D4EDDA', padding:'10px 12px', margin:'0 -12px', borderRadius:'6px' } : {})
                   }}>
                     <div>
-                      <span style={{fontSize:'.88rem',fontWeight:600,color: row.hl?(security==='A'?'#991B1B':'#1D6B3B'):'#1E3A5F'}}>{row.label}</span>
+                      <span style={{fontSize:'.88rem',fontWeight:600,color: row.hl?(security==='A'?'#991B1B':'#1D6B3B'):'#13334C'}}>{row.label}</span>
                       <span style={{fontSize:'.72rem',color:'#9CA3AF',marginLeft:'8px'}}>{row.note}</span>
                     </div>
-                    <span style={{fontWeight:700,fontSize:'.88rem',color: row.hl?(security==='A'?'#1E3A5F':'#1D6B3B'):'#F8FAFF'}}>{fmt(row.val)}</span>
+                    <span style={{fontWeight:700,fontSize:'.88rem',color: row.hl?(security==='A'?'#13334C':'#1D6B3B'):'#F6F6E9'}}>{fmt(row.val)}</span>
                   </div>
                 ))}
               </div>
 
-              <div style={{marginTop:'16px',paddingTop:'16px',borderTop:'2px solid #1E3A5F',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+              <div style={{marginTop:'16px',paddingTop:'16px',borderTop:'2px solid #FD5F00',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                 <div>
-                  <div style={{fontWeight:900,color:'#F8FAFF',fontSize:'1rem'}}>{t.total_landed}</div>
+                  <div style={{fontWeight:900,color:'#F6F6E9',fontSize:'1rem'}}>{t.total_landed}</div>
                   <div style={{fontSize:'.72rem',color:'#9CA3AF'}}>{t.excl_iva} · {fmt(costs.iva)} USD IVA</div>
                 </div>
                 <div style={{textAlign:'right'}}>
-                  <div style={{fontSize:'2rem',fontWeight:900,color:'#F8FAFF'}}>{fmt(costs.totalBeforeIva)}</div>
+                  <div style={{fontSize:'2rem',fontWeight:900,color:'#F6F6E9'}}>{fmt(costs.totalBeforeIva)}</div>
                   <div style={{fontSize:'.72rem',color:'#9CA3AF',fontWeight:600}}>{t.usd}</div>
                 </div>
               </div>
 
-              <div style={{marginTop:'12px',background:'#F5F6F8',borderRadius:'8px',padding:'12px 14px',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+              <div style={{marginTop:'12px',background:'#F6F6E9',borderRadius:'8px',padding:'12px 14px',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                 <span style={{fontSize:'.8rem',color:'#6B7280',fontWeight:500}}>{t.landed_per_unit}</span>
                 <span style={{fontSize:'1rem',fontWeight:900,color:'#1A3A5C'}}>{fmt(costs.landedPerUnit)} <span style={{fontSize:'.72rem',fontWeight:400,color:'#9CA3AF'}}>USD / unit</span></span>
               </div>
             </div>
 
             {/* ── MARGIN RANGE ANALYSIS PANEL ── */}
-            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C8D9EE',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
+            <div style={{background:'#fff',borderRadius:'12px',border:'1px solid #C4C4AA',padding:'24px',boxShadow:'0 1px 4px rgba(0,0,0,.07)'}}>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'20px',flexWrap:'wrap',gap:'8px'}}>
                 <div>
                   <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'4px'}}>
@@ -613,14 +613,14 @@ function Dashboard() {
                   </div>
                 </div>
                 <div style={{display:'flex',alignItems:'center',gap:'6px',background:'#FDECEA',border:'1px solid #FCA5A5',borderRadius:'8px',padding:'6px 14px'}}>
-                  <span style={{fontSize:'1.15rem',fontWeight:900,color:'#1E3A5F'}}>32%–41%</span>
+                  <span style={{fontSize:'1.15rem',fontWeight:900,color:'#13334C'}}>32%–41%</span>
                   <span style={{fontSize:'.72rem',color:'#9B1C1C',fontWeight:600}}>{lang==='en' ? 'gross margin' : 'margen bruto'}</span>
                 </div>
               </div>
 
               {/* Resale range table */}
               <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'12px',marginBottom:'20px'}}>
-                <div style={{background:'#F5F6F8',borderRadius:'10px',padding:'16px',textAlign:'center'}}>
+                <div style={{background:'#F6F6E9',borderRadius:'10px',padding:'16px',textAlign:'center'}}>
                   <div style={{fontSize:'.66rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:'8px'}}>
                     {lang==='en' ? 'Min Resale (32% GM)' : 'Reventa Mínima (32% MG)'}
                   </div>
@@ -630,17 +630,17 @@ function Dashboard() {
                     +{fmt(resaleForMargin(costs.landedPerUnit, MARGIN_MIN) - costs.landedPerUnit)} {lang==='en' ? 'profit' : 'utilidad'}
                   </div>
                 </div>
-                <div style={{background:'#F8FAFF',borderRadius:'10px',padding:'16px',textAlign:'center',border:'2px solid #1E3A5F'}}>
-                  <div style={{fontSize:'.66rem',fontWeight:700,color:'#1E3A5F',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:'8px'}}>
+                <div style={{background:'#F6F6E9',borderRadius:'10px',padding:'16px',textAlign:'center',border:'2px solid #FD5F00'}}>
+                  <div style={{fontSize:'.66rem',fontWeight:700,color:'#13334C',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:'8px'}}>
                     {lang==='en' ? 'Mid-Band (36.5% GM)' : 'Punto Medio (36.5% MG)'}
                   </div>
                   <div style={{fontSize:'1.4rem',fontWeight:900,color:'#fff'}}>{fmt(resaleForMargin(costs.landedPerUnit, 0.365))}</div>
-                  <div style={{fontSize:'.72rem',color:'#5A7A9A',marginTop:'4px'}}>USD / unit</div>
+                  <div style={{fontSize:'.72rem',color:'#6A7A88',marginTop:'4px'}}>USD / unit</div>
                   <div style={{fontSize:'.72rem',color:'#4ADE80',fontWeight:700,marginTop:'6px'}}>
                     +{fmt(resaleForMargin(costs.landedPerUnit, 0.365) - costs.landedPerUnit)} {lang==='en' ? 'profit' : 'utilidad'}
                   </div>
                 </div>
-                <div style={{background:'#F5F6F8',borderRadius:'10px',padding:'16px',textAlign:'center'}}>
+                <div style={{background:'#F6F6E9',borderRadius:'10px',padding:'16px',textAlign:'center'}}>
                   <div style={{fontSize:'.66rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.06em',marginBottom:'8px'}}>
                     {lang==='en' ? 'Max Resale (41% GM)' : 'Reventa Máxima (41% MG)'}
                   </div>
@@ -653,7 +653,7 @@ function Dashboard() {
               </div>
 
               {/* Min / Max scenario comparison */}
-              <div style={{background:'#F5F6F8',borderRadius:'10px',padding:'16px',marginBottom:'16px'}}>
+              <div style={{background:'#F6F6E9',borderRadius:'10px',padding:'16px',marginBottom:'16px'}}>
                 <div style={{fontSize:'.72rem',fontWeight:700,color:'#6B7280',textTransform:'uppercase',letterSpacing:'.08em',marginBottom:'12px'}}>
                   {lang==='en' ? 'Auction Price Scenario Comparison (full operation)' : 'Comparación de Escenarios de Precio de Subasta (operación completa)'}
                 </div>
@@ -662,13 +662,13 @@ function Dashboard() {
                     <div style={{fontSize:'.7rem',color:'#9CA3AF',fontWeight:600,marginBottom:'4px'}}>
                       {lang==='en' ? '▼ Conservative — $13,000 / unit' : '▼ Conservador — $13,000 / unidad'}
                     </div>
-                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F8FAFF',marginBottom:'2px'}}>
-                      {lang==='en' ? 'Landed total:' : 'Total en tierra:'} <span style={{color:'#1E3A5F'}}>{fmt(costsMin.totalBeforeIva)}</span>
+                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F6F6E9',marginBottom:'2px'}}>
+                      {lang==='en' ? 'Landed total:' : 'Total en tierra:'} <span style={{color:'#13334C'}}>{fmt(costsMin.totalBeforeIva)}</span>
                     </div>
-                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F8FAFF',marginBottom:'2px'}}>
+                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F6F6E9',marginBottom:'2px'}}>
                       {lang==='en' ? 'Per unit:' : 'Por unidad:'} <span style={{color:'#1A3A5C'}}>{fmt(costsMin.landedPerUnit)}</span>
                     </div>
-                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F8FAFF'}}>
+                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F6F6E9'}}>
                       {lang==='en' ? 'Resale at 41% GM:' : 'Reventa al 41%:'} <span style={{color:'#1D6B3B'}}>{fmt(resaleForMargin(costsMin.landedPerUnit, MARGIN_MAX))}</span>
                     </div>
                   </div>
@@ -676,13 +676,13 @@ function Dashboard() {
                     <div style={{fontSize:'.7rem',color:'#9CA3AF',fontWeight:600,marginBottom:'4px'}}>
                       {lang==='en' ? '▲ Premium — $20,000 / unit' : '▲ Premium — $20,000 / unidad'}
                     </div>
-                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F8FAFF',marginBottom:'2px'}}>
-                      {lang==='en' ? 'Landed total:' : 'Total en tierra:'} <span style={{color:'#1E3A5F'}}>{fmt(costsMax.totalBeforeIva)}</span>
+                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F6F6E9',marginBottom:'2px'}}>
+                      {lang==='en' ? 'Landed total:' : 'Total en tierra:'} <span style={{color:'#13334C'}}>{fmt(costsMax.totalBeforeIva)}</span>
                     </div>
-                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F8FAFF',marginBottom:'2px'}}>
+                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F6F6E9',marginBottom:'2px'}}>
                       {lang==='en' ? 'Per unit:' : 'Por unidad:'} <span style={{color:'#1A3A5C'}}>{fmt(costsMax.landedPerUnit)}</span>
                     </div>
-                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F8FAFF'}}>
+                    <div style={{fontSize:'.84rem',fontWeight:700,color:'#F6F6E9'}}>
                       {lang==='en' ? 'Resale at 32% GM:' : 'Reventa al 32%:'} <span style={{color:'#1D6B3B'}}>{fmt(resaleForMargin(costsMax.landedPerUnit, MARGIN_MIN))}</span>
                     </div>
                   </div>
@@ -690,25 +690,25 @@ function Dashboard() {
               </div>
 
               {/* Total operation profit range */}
-              <div style={{background:'linear-gradient(135deg,#1E3A5F,#2563EB)',borderRadius:'10px',padding:'18px 20px',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:'12px'}}>
+              <div style={{background:'linear-gradient(135deg,#13334C,#005792)',borderRadius:'10px',padding:'18px 20px',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:'12px'}}>
                 <div>
-                  <div style={{fontSize:'.68rem',fontWeight:700,color:'#5A7A9A',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'4px'}}>
+                  <div style={{fontSize:'.68rem',fontWeight:700,color:'#6A7A88',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'4px'}}>
                     {lang==='en' ? 'Total Operation Gross Profit Range' : 'Utilidad Bruta Total de Operación'}
                   </div>
-                  <div style={{fontSize:'.8rem',color:'#5A7A9A'}}>
+                  <div style={{fontSize:'.8rem',color:'#6A7A88'}}>
                     {totalExcavators} {lang==='en' ? 'units ×' : 'unidades ×'} {fmt(auctionPrice)} {lang==='en' ? 'auction → landed' : 'subasta → en tierra'} {fmt(costs.landedPerUnit)}
                   </div>
                 </div>
                 <div style={{textAlign:'right'}}>
-                  <div style={{fontSize:'.72rem',color:'#5A7A9A',marginBottom:'2px'}}>
+                  <div style={{fontSize:'.72rem',color:'#6A7A88',marginBottom:'2px'}}>
                     {lang==='en' ? 'Min (32%) – Max (41%)' : 'Mín (32%) – Máx (41%)'}
                   </div>
-                  <div style={{fontSize:'1.6rem',fontWeight:900,color:'#1E3A5F'}}>
+                  <div style={{fontSize:'1.6rem',fontWeight:900,color:'#13334C'}}>
                     {fmtM(totalExcavators * (resaleForMargin(costs.landedPerUnit, MARGIN_MIN) - costs.landedPerUnit))}
-                    <span style={{color:'#5A7A9A',fontWeight:400,fontSize:'1rem'}}> – </span>
+                    <span style={{color:'#6A7A88',fontWeight:400,fontSize:'1rem'}}> – </span>
                     {fmtM(totalExcavators * (resaleForMargin(costs.landedPerUnit, MARGIN_MAX) - costs.landedPerUnit))}
                   </div>
-                  <div style={{fontSize:'.72rem',color:'#5A7A9A',fontWeight:600}}>USD</div>
+                  <div style={{fontSize:'.72rem',color:'#6A7A88',fontWeight:600}}>USD</div>
                 </div>
               </div>
             </div>
@@ -722,7 +722,7 @@ function Dashboard() {
               <div style={{display:'flex',alignItems:'center',gap:'12px',marginBottom:'16px'}}>
                 <div style={{fontSize:'1.6rem'}}>{security==='A'?'⚠️':'✅'}</div>
                 <div>
-                  <div style={{fontSize:'.68rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'2px',color:security==='A'?'#1E3A5F':'#1D6B3B'}}>
+                  <div style={{fontSize:'.68rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'2px',color:security==='A'?'#13334C':'#1D6B3B'}}>
                     {t.risk_assessment} — {security==='A'?t.elevated:t.recommended_strat}
                   </div>
                   <div style={{fontWeight:800,fontSize:'.95rem',color:security==='A'?'#7F1D1D':'#1D4733'}}>
@@ -735,7 +735,7 @@ function Dashboard() {
                 <div style={{display:'flex',flexDirection:'column',gap:'10px',fontSize:'.88rem',color:'#7F1D1D',lineHeight:1.7}}>
                   <p>While armed escorts (Custodia Armada) provide a visible physical deterrent, this strategy introduces a significant and often overlooked operational risk on Mexican federal highways: <strong>high visibility actively signals to organized criminal networks that high-value cargo is in transit.</strong></p>
                   <p>Armed convoys are a well-documented target profile for cargo theft syndicates operating in Colima, Michoacán, Jalisco, and the Bajío corridors. The presence of armed personnel creates a tactical confrontation scenario that escalates the probability of coordinated interception attempts — placing both the cargo <strong>and the transport crew at direct physical risk.</strong></p>
-                  <p style={{fontWeight:600,borderLeft:'3px solid #1E3A5F',paddingLeft:'12px'}}>
+                  <p style={{fontWeight:600,borderLeft:'3px solid #FD5F00',paddingLeft:'12px'}}>
                     For {dest.label} ({dest.km} km, {riskLabel}): the {fmt(costs.securityCost)} escort cost does not eliminate the risk of total cargo loss — it may amplify it.
                   </p>
                 </div>
@@ -751,15 +751,15 @@ function Dashboard() {
             </div>
 
             {/* Route Summary */}
-            <div style={{background:'#F8FAFF',borderRadius:'12px',padding:'24px',color:'#fff'}}>
-              <div style={{fontSize:'.72rem',fontWeight:700,color:'#5A7A9A',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'20px'}}>{t.route_summary}</div>
+            <div style={{background:'#F6F6E9',borderRadius:'12px',padding:'24px',color:'#fff'}}>
+              <div style={{fontSize:'.72rem',fontWeight:700,color:'#6A7A88',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'20px'}}>{t.route_summary}</div>
               <div style={{display:'flex',alignItems:'center',marginBottom:'20px',gap:'4px'}}>
                 {['🏭 Yokohama','🚢 Pacific (28d)','⚓ Manzanillo',`🚛 ${dest.label}`].map((step,i,arr) => (
                   <React.Fragment key={i}>
                     <div style={{textAlign:'center',flexShrink:0}}>
                       <div style={{fontSize:'.72rem',fontWeight:600,color:'#fff',whiteSpace:'nowrap'}}>{step}</div>
                     </div>
-                    {i < arr.length-1 && <div style={{flex:1,height:'1px',background:'linear-gradient(90deg,#5A7A9A,#1E3A5F)',minWidth:'16px',margin:'0 6px'}}></div>}
+                    {i < arr.length-1 && <div style={{flex:1,height:'1px',background:'linear-gradient(90deg,#6A7A88,#13334C)',minWidth:'16px',margin:'0 6px'}}></div>}
                   </React.Fragment>
                 ))}
               </div>
@@ -771,15 +771,15 @@ function Dashboard() {
                   { label: t.protocol,          val: security==='A'?t.armed_escort:t.insurance },
                 ].map((item,i) => (
                   <div key={i} style={{background:'#FFFFFF',borderRadius:'8px',padding:'12px'}}>
-                    <div style={{fontSize:'.68rem',color:'#5A7A9A',marginBottom:'4px'}}>{item.label}</div>
+                    <div style={{fontSize:'.68rem',color:'#6A7A88',marginBottom:'4px'}}>{item.label}</div>
                     <div style={{fontWeight:700,color:'#fff'}}>{item.val}</div>
                   </div>
                 ))}
               </div>
 
               {/* Top Model Performance Cards */}
-              <div style={{marginTop:'20px',paddingTop:'20px',borderTop:'1px solid #C8D9EE'}}>
-                <div style={{fontSize:'.68rem',fontWeight:700,color:'#5A7A9A',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'14px'}}>
+              <div style={{marginTop:'20px',paddingTop:'20px',borderTop:'1px solid #C4C4AA'}}>
+                <div style={{fontSize:'.68rem',fontWeight:700,color:'#6A7A88',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:'14px'}}>
                   {lang==='en' ? '🏆 Top Margin Models — Current Auction Price' : '🏆 Modelos de Mayor Margen — Precio Actual de Subasta'}
                 </div>
                 <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
@@ -795,16 +795,16 @@ function Dashboard() {
                       <div key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between',background:'#FFFFFF',borderRadius:'8px',padding:'12px 14px',gap:'8px',flexWrap:'wrap'}}>
                         <div style={{flex:1,minWidth:'140px'}}>
                           <div style={{fontWeight:800,color:'#fff',fontSize:'.88rem'}}>{m.model}</div>
-                          <div style={{fontSize:'.7rem',color:'#5A7A9A',marginTop:'2px'}}>{m.type} · {m.note}</div>
+                          <div style={{fontSize:'.7rem',color:'#6A7A88',marginTop:'2px'}}>{m.type} · {m.note}</div>
                         </div>
                         <div style={{display:'flex',gap:'12px',alignItems:'center',flexShrink:0}}>
                           <div style={{textAlign:'right'}}>
-                            <div style={{fontSize:'.66rem',color:'#5A7A9A',marginBottom:'2px'}}>{lang==='en'?'Resale':'Reventa'}</div>
+                            <div style={{fontSize:'.66rem',color:'#6A7A88',marginBottom:'2px'}}>{lang==='en'?'Resale':'Reventa'}</div>
                             <div style={{fontWeight:800,color:'#fff',fontSize:'.9rem'}}>{fmt(resale)}</div>
                           </div>
-                          <div style={{background:'#F8FAFF',borderRadius:'6px',padding:'6px 12px',textAlign:'center',minWidth:'70px'}}>
+                          <div style={{background:'#F6F6E9',borderRadius:'6px',padding:'6px 12px',textAlign:'center',minWidth:'70px'}}>
                             <div style={{fontSize:'1rem',fontWeight:900,color:'#4ADE80'}}>+{fmt(profit)}</div>
-                            <div style={{fontSize:'.65rem',color:'#5A7A9A',fontWeight:700,marginTop:'2px'}}>
+                            <div style={{fontSize:'.65rem',color:'#6A7A88',fontWeight:700,marginTop:'2px'}}>
                               {(m.margin * 100).toFixed(0)}% GM
                             </div>
                           </div>
@@ -820,10 +820,10 @@ function Dashboard() {
         </div>{/* /grid */}
 
         {/* ── FOOTER ── */}
-        <div style={{marginTop:'48px',paddingTop:'24px',borderTop:'1px solid #C8D9EE',display:'flex',flexWrap:'wrap',justifyContent:'space-between',alignItems:'center',gap:'12px',fontSize:'.78rem',color:'#9CA3AF'}}>
+        <div style={{marginTop:'48px',paddingTop:'24px',borderTop:'1px solid #C4C4AA',display:'flex',flexWrap:'wrap',justifyContent:'space-between',alignItems:'center',gap:'12px',fontSize:'.78rem',color:'#9CA3AF'}}>
           <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
             <Logo size={24}/>
-            <span style={{fontWeight:600,color:'#1E3A5F'}}>Japón Compacto</span>
+            <span style={{fontWeight:600,color:'#13334C'}}>Japón Compacto</span>
             <span>· {t.footer_platform}</span>
           </div>
           <div style={{display:'flex',gap:'24px'}}>
